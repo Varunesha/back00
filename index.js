@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5001;
 const app = express();
 app.use(
   cors({
-    origin: ["https://gregarious-croissant-9e45f4.netlify.app/"],
+    origin: ["https://varunshop.netlify.app/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
@@ -21,7 +21,7 @@ connectionDB();
 app.use(cookieParser());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/api", router);
+app.use("/", router);
 app.get("/", (req, res) => res.send("server is ready"));
 
 app.listen(PORT, () => {
